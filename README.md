@@ -45,12 +45,13 @@ tennis-arb detect-ball --video data/clip.mp4 --out outputs/ball_2d.csv --show
 
 This writes a CSV with columns: `frame,x,y,confidence`.
 
+![2D Detection](docs/ball.png)
 ### 2) Detect court lines / corners on a reference image
 
 ```bash
 tennis-arb detect-court --image data/frame.jpg --out outputs/court_keypoints.json --show
 ```
-
+![Court Lines Detection](docs/corner.png)
 ### 3) Calibrate a camera with known 3D court points
 
 Create two JSON files:
@@ -72,7 +73,7 @@ tennis-arb triangulate \
   --points1 outputs/ball_cam1.csv --points2 outputs/ball_cam2.csv \
   --out outputs/trajectory_3d.csv
 ```
-
+![Trajectory](docs/trajectory.png)
 ## Notes
 
 - This project is **not** a full Hawk-Eye reimplementation. It is intentionally simplified and intended for learning / experimentation.
